@@ -1,0 +1,138 @@
+﻿sudo scp -i "test-ts-node-key.pem" Documents/tensend-backend-test/tensend-backend.zip ubuntu@ec2-18-188-45-205.us-east-2.compute.amazonaws.com:tensend-backend    : copie distant ssh amazon aws
+
+
+******************** Connection mysql **************************
+mysql --host=localhost --port=3306 -u tensend_user -p 
+Enter password: tensend_password
+
+
+sudo docker container ls
+
+
+docker exec -it 83b18fa460be /bin/bash
+
+
+mysql --host=localhost --port=3306 -u tensend_user -p -h127.0.0.1   :  Connect to mysql outside of docker
+
+
+show variables like "character_set_database";     :  mysql show character set
+
+
+DESCRIBE received_reviews : Decrire table
+
+
+nest g service car : Create service 
+
+
+
+
+docker cp www/driver-vtc/ 8edd6a3ac43c:/driver-vtc/  : copy from local to container
+
+
+docker exec -it 8edd6a3ac43c /bin/bash :  run existing container
+   
+docker run -it ubuntu : run new instance of ubuntu
+   
+docker ps -a : list docker container
+
+
+docker run : creates running containers from images
+
+
+apt-get update : before use apt in docker
+
+
+sudo apt install docker.io
+
+
+/etc/init.d/apache2 start : start apache
+/etc/init.d/apache2 status
+sudo docker run -dit --name goodFoodApache -p 8080:80 httpd:2.4 :run apache
+docker ps : list of running container
+sudo docker stop e75dbc6611ef   : stop container
+sudo dpkg -i packagename.deb :  install deb package
+
+
+
+
+******** run appache
+sudo docker run -dit --name goodFood-app -p 8080:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4
+docker rm f90d702f347d : remove container
+****** run apache in some folder
+sudo docker run -dit --name goodFood-app -p 8080:80 -v /home/nass/Documents/goodFood-app/:/usr/local/apache2/htdocs/ httpd:2.4
+git pull --rebase origin master : pull diverged branch
+git push -f origin master : force push after rebase
+ssh root@137.184.235.120    : connection ssh nouveau 
+
+
+**************** install php ***********************************
+sudo apt install apache2
+sudo apt install php libapache2-mod-php
+
+
+*************** Laravel Create Project  *****************************
+php composer.phar create-project laravel/laravel good-food-admin1
+
+
+************** Solve bug create project  **********************************
+php ../composer.phar install --ignore-platform-reqs
+
+
+**************** ExpressVpn ************************************************
+expressvpn connect
+expressvpn status
+expressvpn list
+expressvpn list all           // get all locations
+expressvpn disconnect
+expressvpn connect Germany
+expressvpn connect [Location]
+
+
+
+
+********************** expo dev client *******************************************
+npm install -g eas-cli
+npx expo install expo-dev-client
+eas build --profile development --platform android
+npx expo start --dev-client
+
+
+
+
+
+
+
+
+**************  wordpress admin
+admin
+234A51D
+
+
+http://good-food-admin.taxiask.com/wp-admin/customize.php
+nextstep
+
+
+pb audio
+Type in chrome://flags.
+Find 'Hardware Media Key Handling' and disable it.
+
+
+github token
+jojo987N
+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
+
+
+coursera 
+cabliveer@gmail.com 
+18juin1985N@
+
+
+*******************************  firebase *******************************************
+request.time < timestamp.date(2023, 1, 30)
+
+
+*************** ******* add android and ios folder to expo  ************************************
+npx expo prebuild
+
+
+ip addr : Connaitre mon ip

@@ -1,0 +1,1022 @@
+﻿du  : Taille dossier ou ...
+lsblk : Disques et partitions
+lsblk -fe7 : Disques et partitions avec détails
+vnstat
+sudo nethogs
+sudo nethogs -v 3  : TOTAL RECEIVED and TOTAL SENT by Apps
+sudo ss -tp
+wget : téléchargement 
+wget -c
+lsusb : Liste tous les périphériques 
+googler
+links
+ps: type de shell
+sh : changer de shell vers dash
+env : variables d'environnement du système 
+top : liste de tous les processus
+
+
+traceroute -w 7.0 google.com : augmente le temps d'attente routeur
+traceroute -q 1 google.com : diminue le nombre de paquets envoyés(en occurence ici 1)
+
+
+gcc hello.c -o hello : compilateur gcc
+
+
+free -h : Ram utilisée
+
+
+df -h --type=tmpfs : Espace shared (tmpfs) cache , fichiers temporaires
+
+
+htop : utilisation de la ram
+
+
+htop -u <Nom d'utilisateur>    // htop -u nass : par exemple
+
+
+ps -aux : Liste des processus
+
+
+ps -ef : Processes and parents
+
+
+xlsclients : Affiche les applications s'éxécutant 
+
+
+adb install "chemin-accès-fichier-apk"
+
+
+nmcli device wifi rescan   : Scan réseaux wifi
+nmcli device wifi list    : Liste des réseaux wifi
+
+
+//connection réseau wifi
+nmcli device wifi connect 'SSID' password 'CLÉ_WIFI' ifname 'NOM_DE_L_INTERFACE_WIFI' name 'NOM_DU_PROFIL'
+
+
+// Connection wifi dans infinix 
+nmcli device wifi connect 'Infinix Smart 4' password '3c6e712efb41'
+
+
+history
+Ctrl + R  // Recherche avec completion
+
+
+./android-studio/bin/studio.sh :  Lancer Android
+
+
+ln -s  : Création Lien Symbolique 
+
+
+sudo ln -s /home/nass/Téléchargements/android-studio/jre/bin/java
+
+
+sudo killall tor
+
+
+dpkg -L <packagename> : Les applications sont installées ou 
+
+
+java -cp gradle.jar com.somepackage.SomeClass   // execute jar file 
+
+
+javac -d . demo.java   // create package dans le répertoire courant
+
+
+java com.somepackage.SomeClass  // exécuter la classe avec son package 
+
+
+// il faut 2 points !!
+java -cp gradle.jar: com.somepackage.SomeClass
+
+
+tar xf <nom de fichier>     : décompresser 
+
+
+sudo timedatectl set-timezone Europe/Paris      : Changer heure vers France
+sudo timedatectl set-timezone Africa/Douala     : Changer heure vers Cameroun
+
+
+
+
+// Vitesse de lecture sur disque
+sudo hdparm -tT /dev/sda
+sudo hdparm -tT <Nom de la partition du disque>
+sudo fdisk -l   : Recherche Nom de partition des disques 
+
+
+blkid  : identifier la partition swap
+lsblk  : identifier la partition swap
+
+
+sudo swapoff -a : disable/désactiver la partition d'échange --- All swaps
+
+
+lsb_release -a  : Information système
+
+
+gradlew assembleDebug : build a debug apk
+
+
+unset JAVA_OPTS 
+unset <Nom Variable>
+
+
+pidof firefox    : id process d'une application
+
+
+strace : intercepter tous les appels systèmes par un programme
+
+
+ls -i toto    : Numéro inode d'un fichier 
+
+
+ltrace        : Affiche les appels de fonction
+
+
+ id -u <uid>   : Nom de l'utilisateur
+ 
+ cat /proc/<pid>/status   : process size(VMRSS)
+ 
+ nmcli  : network manager cli
+ 
+ top -p pid  : top for one process
+ 
+ cat /proc/sys/vm/swappiness  : Vitesse passage de ram physique à la partition swap
+ 
+ sudo sysctl vm.swappiness=10    : update swappiness
+ 
+ sudo swapon -s    : Taille du swap
+ grep Swap /proc/meminfo    : Taille swap
+ 
+ grep MemTotal /proc/meminfo      : Ram disponible
+ 
+ vmstat -s      : info Ram
+ 
+ sudo dmidecode --type memory   : Ram hardware 
+ 
+ service gdm stop    :  stop gnome service
+ 
+ wmctrl -m         : système de fenètrage
+ 
+ nslookup google.com      : information sur un domaine - ip du domaine 
+ 
+ pgrep firefox     :  pid d'une application
+ 
+ &       : Ajouté à la fin éxécute le programme en arrière plan
+ 
+ nohup commande      : éxécution arrière plan avec possibilité de fermer console
+ 
+ pgrep -P 2706       : processus enfants d'un processus
+ 
+ ps --ppid 2706      : processus enfants d'un processus
+ 
+ Ctrl + Z ensuite bg   : passer un processus en arrière plan
+ 
+ jobs    :  liste les processus en arrière plan
+ 
+ fg      : remettre processus au premier plan
+ fg %2   : remettre processus en arrière plan numéro 2 au premier plan 
+ 
+ dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n  :list all installed packages by size order(ko)taille
+ 
+  dpkg -L tor : Affiche les fichiers installés par un packet 
+  
+  dpkg : database
+  
+  totem : Nom du programme vidéos !!!!! (Gnome videos)
+  
+  grep -r Vidéos /usr/share/applications  : le moyen le plus fiable, basé sur le nom d'une application dans le 
+  lanceur, est de trouver le fichier de configuration du lanceur correspondant
+  Ensuite
+  dpkg -S /usr/share/applications/org.gnome.Totem.desktop : savoir quel paquet fournit ce fichier
+  
+  /usr/share/applications  : fichiers de configuration lanceurs applications
+  
+  grep -r   :  recherche dans répertoire et sous répertoire 
+  
+  pmap 11546                 : taille mémoire utilisée par un processus et les tailles de ses dépendances
+  
+  pmap 11546 | tail -n 1     : taille mémoire utilisée par un processus
+  
+  ctrl + shift + F    : rechercher dans la console
+  
+  apt search Xlib.h     : Rechercher avec apt
+  
+  sudo chmod +x notify.sh  : Rendre script bash éxécutable
+  
+  find *.sh                : Chercher tous les fichiers avec extension .sh
+  
+  sleep 5 && totem 24hS5E19.mp4    :  création réveil
+  
+  sudo ctl restart gdm.service         : redémarrer gnome
+  
+  sudo systemctl stop gdm.service            : Arrêter gnome
+  
+  sudo systemctl disable gdm.service         : désactiver gnome  (même quand on redémarre )
+  
+  touch {metadata.json,extension.js,prefs.js,stylesheet.css}    : créer plusieurs fichiers
+  
+  gnome-shell-extension-tool --create-extension       : créer extension gnome
+  
+  gcc basic-tutorial-1.c -o basic-tutorial-1 `pkg-config --cflags --libs gstreamer-1.0`    : aide le compilateur gcc à trouver des bibliothèques
+  
+  usr/include/gstreamer-1.0/gst/gst.h      : chemin librairie gstreamer
+  
+  gcc basic-tutorial-5.c -o basic-tutorial-5 `pkg-config --cflags --libs gtk+-2.0 gstreamer-1.0`     : Compiler avec gtk-2.0
+  
+  dbus-run-session -- gnome-shell --nested --wayland   : Session imbriquée de gnome
+  
+  gnome-extensions enable example1@example.com  : Enable extension 
+  gnome-extensions disable example1@example.com  : Disable extension
+  
+  ps aux|grep sys  : rechercher dans une sortie d'une commande , en occurence ici "sys" dans ps aux
+  
+  journalctl --since "10 minutes ago"    : journalctl quelques minutes il ya 
+  
+  journalctl -u gdm.service    : journal pour le service gnome
+  
+  ls -l *.txt    : affiche tous les fichiers se terminant par .txt
+  
+  journalctl --since 11:20      : journal depuis 11h20
+  
+  lspci -vnn | grep -A 12 '\''[030[02]\]' | grep -Ei "vga|3d|display|kernel"    : Connaitre carte graphique
+  
+  lspci -v | less         : info carte graphique
+
+
+  ALT + F2   ensuite r     : restart gnome
+  
+  /etc/gdm3/daemon.conf     décommenter Wayland     : désactive wayland
+  
+  g++ dow_manager.cpp main.cpp -lX11      : compiler c++ en ajoutant X11
+  
+   ps -ef | grep java           : ps ef voit des processus passés jusqu'à il y a 1 ou 2h apparemment !
+   
+   adb shell getprop ro.build.version.release        : android version
+   
+   adb shell getprop ro.build.version.sdk            : android api level
+   
+   adb reboot bootloader       : placer le dispositif dans fastbood
+   
+   fastboot flashall -w        : flasher un appareil
+   
+   Flasher dispositif android
+   https://source.android.com/setup/build/running#selecting-device-build
+   
+   python3 -m http.server    : Démarrer un serveur dans un dossier
+   
+   wget -O 24htest.mp4 http://0.0.0.0:8000/24hS5E24.mp4    : Copier d'un dossier local à un autre 
+   
+   sudo nmcli d    : check internet
+   
+   xdpyinfo | grep 'dimensions:'     : dimension écran
+   
+   ls -lt      : ls par date de création 
+   
+   ffprobe -v quiet -print_format json -show_format -show_streams -print_format json "24htest.mp4"   : Obtenir les informations sur une video
+   
+   ffplay 24htest.mp4  : permet de lire une vidéo
+   
+   ffmpeg -ss 00:01:00 -i 24htest.mp4 -to 00:05:00 -c copy output.mp4  : couper une vidéo 
+   
+   /etc/systemd/system : Chemin service
+   
+   sudo systemctl status example.service    : Check service status
+   
+   netstat -tulpn         : programme qui utilise un port
+   
+   netstat -an           :  Toutes les connections établies et les ports en ciffres et non des lettres !! (n)
+   
+   sudo lsof -i tcp:34184 -P -R    : information sur le processus qui utilise un port
+
+
+   telnet    :  Client serveur
+   
+   hostname -I     :  Addresse ip locale
+   
+   (addresse dans le réeau):(port)   : connexion distante 
+   
+   du | head -n 5       : Afficher les 5 premières lignes d'une commande , ici en occurence du
+   
+   du | sort -nr | head -n 5    : Afficher les 5 éléments les plus lourds trier par ordre décroissant
+   
+   df -Th   : Check file system 
+   
+   sudo mount -t ntfs /dev/mmcblk0p3 /media/nass/Windows/    : monter un disk
+   
+   journalctl | python3 detectApp.py       :  detect apps
+   
+   su thomas :  Changer d'utilisateur sans changer de répertoire de travail 
+   
+   su -thomas : Changer d'utilisateur avec démarrage d'un nouveau shell et ..
+   
+   su -       : Connexion en tant que super utilisateur root (exit pour sortir)
+   
+   sudo visudo : éditer fichiers sudoers (sudo)
+   
+   pkg-config --modversion gtk+-2.0    : Check gtk 2 version
+   
+   /storage/emulated/0/Android/data/   : dossiers contenant toutes les apps .
+   
+   /storage/emulated/0/Android/data/com.google.android.youtube/files/offline : fichiers téléchargées pour youtube offline
+   
+   adb shell “stop; sleep 2; start” : reboots the device
+   
+   adb shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq  : Vitesse du processeur
+   
+   adb kill-server  : stop adb
+   
+   php -S 192.168.43.213:8500   : démarrer serveur vu aussi à distance 
+   
+   ls -p  : préciser si fichier ou dossier 
+   ls -l : Fichiers, dossiers avec droit d'écriture et lecture
+   
+   adb shell cat /proc/cpuinfo     :  information processeur 
+   
+   /data/local/tmp        :  dossier ou sont stockés lorsque que tu utilise android studio (nass.h dedans)
+   
+   chmod 755 nass.sh      : Ajouter des autorisations exécutables au binaire
+   
+   /system/bin            : Commandes linux (mobile)
+   
+   mount /system
+   
+   adb reboot recovery    : lancer image de récupération
+   
+   adb shell sh /sdcard/myscript.sh : éxécuter script shell dans téléphone
+   
+   /usr/share/doc/intltool-0.50.2
+   
+   ./configure --prefix=/opt/xfceNass && make && sudo make install     : Compile xfce
+   
+   export PKG_CONFIG_PATH=/usr/lib/pkgconfig  
+   export PKG_CONFIG_PATH=/opt/xfceNass/lib/pkgconfig
+   
+   /usr/lib/x86_64-linux-gnu/pkgconfig/gudev-1.0.pc
+   
+   sudo apt-get install libgudev-1.0-dev   :  pour gudev-1.0
+   
+   meson --prefix =/opt/xfceNass
+   
+   grep " install " /var/log/dpkg.log : Last installed packages
+   
+   gcc -o test test.c -I/home/nass/Téléchargements/libpcap-0.9.4 : Lier gcc à une librairie(chemin absolue)
+   
+   sudo apt-get install libpcap-dev   : install libpcap 
+   
+   gcc <filename> -lpcap      : Compile with libpcap
+   
+   ip link show : Liste des interfaces réseaux (reseau)
+   
+   df -h   : taille de disque par partition
+   
+   df -h Documents/ : Donne la taille d'un dossier
+   
+   gcc -o HelloWorld HelloWorld.c -lncurses  :  Compiler ncurses
+   
+   ./configure --prefix=/opt/lightdm && make && sudo make install     (No package 'libxklavier' found)
+   
+   dm-tool add-nested-seat   : lance lightdm dans une nouvelle fenêtre
+   
+   lightdm --test-mode
+   
+   about:config  : Préférence technique Firefox
+   media.cache_readahead_limit  de 60 à 9999
+   media.cache_resume_threshold de 30 à 9999
+   about:cache : 
+   
+   find . -name "*.h"  : Chercher tous les fichiers avec l'extension .h
+   
+   cp -R *.h ../xfce4-session   : Copier tous les fichiers .h dans le repertoire ../xfce4-session(depuis le répertoire courant )
+   
+   ps -ef | grep u0_    :  applications en cours d'exécution sur l'appareil (android)
+   
+   | wc -l    : ajouter à la fin pour compter 
+   
+   Ctrl Alt F2  : on passe en mode console
+   ctrl Alt F3  : on revient en mode normal
+   
+   xeyes : Check if X11 running
+   
+   // Check if X11 or Wayland is used 
+   loginctl
+   loginctl show-session <SESSION_ID> -p Type
+   
+   // Gestion de clés 
+   systemctl --user status gpg-agent
+   systemctl --user stop gpg-agent
+   systemctl --user start gpg-agent
+   
+   xfsm-startup.c ---> xfsm_startup_init_agent
+   exit peut être avant ! éssayer de faire disparaitre erreur de segmentation
+   
+   gdb: Installer gdb ? debogger - debug 
+   
+   ptrace : appel system , control processus
+   
+   if(a=b)  :  if((a=b) != 0 )
+   
+   grep -r xfsm_launch_desktop_files_on_login  xfce4-session-4.16.0/xfce4-session  : rechercher un mot dans un dossier 
+   
+   main.c --> xsfm-manager.c --> xsfm-legacy.c --> xsfm-startup.c --> xsfm-global.c 
+   
+   grep -r xfce_spawn_command_line_on_screen  xfce4-session/*.c  : Chercher dans des fichiers avec une certaine extension
+   
+   grep -r --include \*.c  xfce_spawn_command_line_on_screen  xfce4-session-4.16.0/ : Rechercher de façon
+   
+   récursive dans des fichiers avec une certaine extension
+   
+   ./startxfce4 -- :2   démarrer xfce dans un nouveau display
+   
+   sudo apt-file search iwlib.h  : permet de retrouver à quel paquet appartient un fichier .
+   
+   /etc/X11/xinit/xinitrc    : .xinitrc est ici ref (https://wiki.archlinux.org/title/Xinit#xinitrc)
+   
+   ~/.cache/lxsession/LXDE/run.log  : regarder logs pour une application
+   
+   loginctl terminate-session 27    : terminer une session : loginctl terminate-session id
+   
+   sudo apt-get download git
+   
+   .config/lxsession/LXDE/desktop.conf  : Change cursor size
+   
+   xsetroot -cursor_name left_ptr
+   
+   startx > $HOME/startx.log 2>&1 : écrire les logs de startx dans un fichier 
+   
+   php -S 127.0.0.1:8000  : php start server
+   
+   php -i   : Trouver php ini, Configuration File (php.ini), Loaded Configuration File
+   
+   /usr/sbin/gdm3    : default-display-manager : Gestionnaire d'affichage par défaut !
+   
+   sudo iptables -L  : Lister les règles 
+   
+   sudo iptables -P INPUT DROP   : Bloquer toutes les connexions entrantes 
+   
+   sudo iptables -P INPUT ACCEPT : Accepter toutes les connexions entrantes
+   
+   sudo iptables -P OUTPUT DROP  : Bloquer toutes les connexions sortantes
+   
+   sudo iptables -A OUTPUT -m owner  --uid-owner nass -j ACCEPT : Autoriser les connexions sortantes pour un utilisateur
+   
+   sudo iptables -F   : reset iptables rules
+   
+   sudo iptables -P OUTPUT DROP
+   sudo iptables -P OUTPUT DROP
+   
+   /etc/xdg/openbox/rc.xml
+   .config/openbox/lxde-rc.xml 
+   
+   make install DESTDIR=/opt/nethogs : Installer dans un répertoire 
+   make install PREFIX=/opt/nethogs : Installer dans un répertoire 
+   
+   whereis nethogs  : Rechercher un éxécutable , en occurence ici nethogs
+   
+   ps aux --sort -rss  : List process by memory usage 
+   
+ find ~/Téléchargements/ -mindepth 1 -mtime -1 : Rechercher les fichiers ou dossiers modifiés entre 1 et il ya 1j
+ 
+find ~/Téléchargements/ -mindepth 1 -mtime -1 -delete :suppr. les fichiers ou dossiers modifiés entre 1 et il ya 1j
+
+
+  grep -r ARRAY_SIZE . | head -2 : rechercher les 2 premières ocurences
+  
+  /usr/bin  : Contient tous les programs des applications utilisées
+  
+  sudo lsof -i:8080  : Vérifier si un port est ouvert !
+  
+  npm init -y : initialiser npm sans question
+  
+  npm i express : installer express
+  
+  jsonplaceholder : Fake appel api 
+  
+  top -o %MEM  : Trier processus par utilisation de la mémoire
+  
+  pip3 est dans '/home/nass/.local/bin'
+  
+  Information sur l'écran : sudo lshw -C display
+  
+  sudo hwinfo --short   : Liste les informations sur le matériel
+  expressvpn
+  EBMDK5FOHDF7GJVPQRLIPUC
+  
+  expo sdk versions  create project
+  expo init --template blank@37.0.1
+  expo init --template tabs@37.0.1
+  
+  ctrl + shift + V : indenter sélection (Sublime text)
+  ctrl + shift + K : Supprimer ligne
+  
+  /usr/local/lib/node_modules/  : chemin des modules de node js 
+  
+  zip -r aspire.zip aspire -x *git* *node_modules* *bower_components* *.DS_Store* *.ds_store* *.editorconfig*
+  
+  cost-of-modules : size of node modules in folder
+  
+  expo sdk version : package.json -> rechercher expo:
+  
+  npm install : dans dossier projet existant expo 
+  
+  git add * : ajouter tous les fichiers et dossiers
+  
+  git commit -m "sauvegarde 1"
+  
+  git log : historique
+  
+  git add . :  ajouter tous les fichiers et dossiers
+  
+  git branch 
+  
+  git checkout 2cdc0fe413e7f0edb7760ab8e9072be2bed5cef1  // revenir en arrière 
+  
+  git checkout master // revenir à la position actuelle
+  
+  git restore yarn.lock : restaurer un fichier
+  
+  git branch <Branch name > 97f41e0 : créer une nouvelle branche en revenant dans le passé
+  
+  git checkout <branch name > : changer de branche 
+  expo upgrade : mise à jour d'un projet vers le sdk supérieur
+  
+  grep -R --exclude-dir=node_modules 'console.log' NetflixClone : recherche avec exclusion du dossier node_modules
+  
+  git archive : créer un zip avec git
+  
+  ip a : connaitre l'ip de la machine
+  
+  ssh nass@192.168.52.169  : connection ssh autre machine
+  
+  su - : connection en sudo distant
+  
+  code : lancer vscode 
+  
+  sudo systemctl status ssh : check if ssh server is active
+  
+  sudo systemctl start ssh : start ssh server
+  
+ cat /sys/class/power_supply/BAT0/capacity : niveau de la batterie
+ 
+ git archive --format=zip --output NetflixClone.zip HEAD : create zip with git
+ 
+ scp NetflixClone.zip nass@192.168.229.169:/chemin/vers/répertoire   : copier de local vers distant 
+ 
+ unzip ../NetflixClone.zip -d NetflixClone : unzip to a folder 
+ 
+ dpkg-query -L nodejs  chemins de nodejs
+ dpkg-query -L npm  chemins de npm
+ 
+ /usr/share/nodejs/npm/npmrc
+ 
+  scp NetflixClone2.zip nass@192.168.229.169:Documents
+  
+  npm install --save --legacy-peer-deps : Conflits de dépendance React
+  
+  diff -q /media/nass/saveUNTITLE/ /media/nass/UNTITLED/ : différence entre deux dossiers
+  
+  ssh -X nass@192.168.229.169 : open firefox on remote desktop, distant
+  
+  vscode
+  ctrl + shift + P  emmet:Wrap With Abbreviation : pour wrap une sélection
+  shift + Alt + -> : sélectionner tout entre guillemet
+  
+  file ficher : connaitre la taille d'un fichier image
+  
+  yarn react-native info : emplacement de react native
+  
+  npm uninstall <package> : enlever un package
+  
+  expo r -c : clean chache expo 
+  
+  yarn upgrade firebase@9.7.0    : install firebase with specific version
+  
+  which : permet de trouver le chemin d'un fichier 
+  
+  sudo npm install -g node@14  : change node to specific version , ici 14
+  
+  sudo apt remove npm : remove package
+  
+  yarn add @gorhom/bottom-sheet --ignore-engines : permet d'ignorer les erreurs du moteur lors de l'installation
+  
+  expo build:android : create apk
+  expo build:status : find apk link
+  adb shell pm list packages : list of app , packages in the device
+  
+  adb -s 051141102P010661 install your-app-slug-e315f294b9de48db80c01ac418beaf95-signed.apk : install adb in device
+  
+  yarn start --offline : launch expo offline
+  
+   yarn add @expo-google-fonts/roboto --ignore-engines : install font expo
+   
+   https://directory.vercel.app/ : site pour récupérer infos et installations font
+   
+   <view onTouchStart : détect le toucher
+   
+   nvm ls : list des nodes installés
+   nvm install 12.22.5 : install une version spécifique de node 
+    nvm use 18.3.0: switcher à une version de node 
+    nvm uninstall 10.13 :désinstaller une version de node 
+    
+    rnf : react native boilerplate
+    rafc: react
+    
+    n : manage node versions (n -npm)
+    npm install -g n
+    
+    les fichiers ppa sont dans : /etc/apt/sources.list.d
+    
+    removed nod 12.22.5
+    
+    ssh -i "nass84.pem" admin@ec2-18-212-170-237.compute-1.amazonaws.com : connect to ssh server amazon
+    chmod 400 : si pb de connexion
+    
+    sudo scp -i "nass84.pem" Documents/uber-manager/uber-manager.zip admin@ec2-18-212-170-237.compute-1.amazonaws.com:www  : copier vers aws
+    
+    18.212.170.237: id du serveur aws
+    
+    sudo scp -i "nass84.pem" Documents/uber-manager/uber-manager.zip ubuntu@ec2-44-192-27-15.compute-1.amazonaws.com:www : copier dans nouveau
+    
+    sudo -su : aws connection admin unbuntu
+    
+    sudo du -h --max-depth=1 . : liste les dossiers par taille dans le répertoire courant, profondeur niveau 1
+    
+    sudo du -h --max-depth=1 .| sort -rh : liste les dossiers par taille dans le répertoire courant, profondeur niveau 1 , ordre décroissant
+    
+    sudo mkfs -t ext4 /dev/nvme1n1  : ajouter système de fichiers à une partition
+    
+    Ctrl + O to save and Ctrl + X to close file : nano
+    
+    ssh -X -i "nass84.pem" ubuntu@ec2-3-230-148-41.compute-1.amazonaws.com  : start ssh with X
+    
+    sudo growpart /dev/nvme0n1 1  :  resize partition 
+    
+    sudo resize2fs /dev/nvme0n1p1: resize fileSystem
+    
+    cat /etc/X11/default-display-manager : check which display manager is use here /usr/bin/slim
+  
+    yarn start --tunnel  : start expo in tunnel 
+    
+    ssh -L 5901:127.0.0.1:5901 -i "nass84.pem" ubuntu@ec2-44-203-201-151.compute-1.amazonaws.com  : connexion vncserver
+    
+    ******** …or create a new repository on the command line
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/jojo987N/test-ud.git
+        git push -u origin main
+
+
+      ****** github generate personnal access token *****
+      https://github.com/settings/tokens
+      
+      mot de passe token : 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
+      
+      new Token : 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
+      
+      new1 : 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
+      
+      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
+      
+      ********* rsync local to remote **********
+      rsync -r --exclude-from=Documents/uber-eats-driver/.gitignore /home/nass/Documents/uber-eats-driver/ -e "ssh -i nass84.pem"   ubuntu@ec2-3-236-14-228.compute-1.amazonaws.com:www/uber-eats-driver   
+      
+      ******** rsync remote to local **********
+     rsync -r  -e "ssh -i nass84.pem" ubuntu@ec2-3-236-14-228.compute-1.amazonaws.com:www/uber-eats-driver/ --exclude=node_modules --exclude=build --exclude=expo --exclude=babel.config.js /home/nass/Documents/uber-eats-driver/
+     
+     ****** scp local vers serveur ****
+     sudo scp -r -i "nass84.pem" Téléchargements/youtube2022-react-admin/src/pages/single/ ubuntu@ec2-54-208-200-150.compute-1.amazonaws.com:www/uber-dashboard/src/pages/single/
+     
+     ******** App web dashboard rsync remote to local **********
+     rsync -r  -e "ssh -i nass84.pem" ubuntu@ec2-18-208-177-227.compute-1.amazonaws.com:www/uber-dashboard/ --exclude=node_modules --exclude=build /home/nass/Documents/dashboard/
+     
+     Ctrl + L : Clear console
+     
+     ******* rsync remote to local  uber-eats-clone *********
+     rsync -r  -e "ssh -i nass84.pem" ubuntu@ec2-3-209-80-3.compute-1.amazonaws.com:www/uber-eats-clone/ --exclude=node_modules --exclude=build --exclude=.expo --exclude=android --exclude=reset-cache --exclude=package-lock.json --exclude=.vscode --exclude=babel.config.js --exclude=positions.js --exclude=data.js /home/nass/Documents/uber-eats-clone/
+     
+     sudo kill -9 process_pid : kill process
+     
+     ssh -i nassKeysDO root@192.241.139.136 : connection digital ocean
+     mdp : nass // digital ocean droplet
+     
+     ********* envoyer dans digital ocean
+     sudo scp -r -i nassKeysDO Documents/uber-restaurant/uber-restaurant.zip   root@192.241.139.136:www
+     
+     source .nvm/nvm.sh  : pour finaliser l'installation de nvm
+     
+     npm bin -g : les binaires de npm
+     
+     git checkout -b presentation : créer une nouvelle branche
+     
+     ****** mettre à jour une autre branche ********
+     1)git log - on Branch1 with your changes
+     2)copy commit SHA of your changes
+     3) git checkout branch2 - where to apply your changes
+     4)git cherry-pick SHA_OF_COMMIT_FROM_STEP_2
+     git cherry-pick 85e8dec59b71ada14ff50c24fd142f17134aaf20    
+     
+     git commit --amend -m "text" : update commit 
+     git branch -m apkG : rename branch (you have to be inside branch)
+     git log --raw : which files changed with commit
+     git reset --hard : undo merge
+     git restore <fichier> : annuler les modifications
+     git diff : show changes inside files
+     
+     serve -s  build : lancer le mode production (uber-dashboard)
+     serve -s -n  build : lancer le mode production (uber-dashboard) --no clipboard
+      
+      
+      ****** rsync digitalocean
+     rsync -r  -e "ssh -i nassKeysDO" root@192.241.139.136:www/uber-eats-clone/components/home/Categories.js --exclude=node_modules --exclude=build /home/nass/Documents/uber-eats-clone/components/home/Categories.js
+     
+     eas build -p ios --auto-submit : deploy to apple store
+     
+     eas build -p android --auto-submit : deploy to play store
+     
+     git branch -D presentation1 : Supprimer branch (forcer)
+     git branch -d presentation1 : Supprimer branch
+     
+      git merge apple : merge 2 branch
+      
+      ssh -L 5901:127.0.0.1:5901 -i nassKeysDO root@192.241.139.136  : connexion vncserver
+      
+      npm i -g nodemon : install nodemon globally
+      
+      npm init -y : initialiser projet en évitant les questions de la console
+
+
+      vncserver -kill :1 : stop vncserver
+      
+      192.241.139.136:5901  : serveur pour se connecter à vnc server
+      
+      eas build:list
+      
+      eas build -p android --profile preview : build apk after add eas.json
+      
+      cat /var/log/syslog : log for service
+      
+      expo start -c: reset cache
+      
+      ******** digitalOcean remote to local ***********
+
+
+      scp nassKeysDO root@192.241.139.136:www/uber-eats-clone/uber-eats-clone-local.zip Documents/uber-eats-clone-local 
+      
+      ******** définition bundle **********
+      L’empaquetage (bundling, NdT) consiste à suivre le graphe des importations dans les fichiers, et à les regrouper au sein d’un même fichier : un bundle
+      https://fr.reactjs.org/docs/code-splitting.html
+      
+      ******* splitting ********
+      https://fr.reactjs.org/docs/code-splitting.html
+      
+      ss: list all ports in use
+      
+      serve -s build : run build
+      
+      google-chrome <file> : open file from terminal
+      
+      ********* fetch branch from github **********
+      git fetch https://github.com/jojo987N/ua.git admin-newMenu:admin-newMenu 
+      
+      expo push notification
+      https://docs.expo.dev/push-notifications/using-fcm/
+      
+      ************ Good Food Stripe Api keys ************
+      
+      public key : pk_test_IvI4y9lJ7FvJR4sPtn1khdkV
+      secret key : sk_test_PjBe98W8njGhrqUhldZXCtcj
+      
+      ******** vscode comment function ************
+      https://github.com/microsoft/vscode-comment
+      
+      ********** formulaire codecanyon, main files ***********
+      https://help.author.envato.com/hc/en-us/articles/360000471583-CodeCanyon-General-File-Preparation-Guidelines?_ga=2.168956963.385120252.1660582033-1519826648.1657767912
+      
+      //.* : tous les commentaires vscode
+      ^(\s)*$\n  : tous les espaces
+      
+      git push : pour envoyer vers git 
+      git remote -v : afficher les repository distant
+      git merge origin/prod : récupérer une branche distante et merger avec la courante 
+      git fetch origin admin-newMenu : prendre ...
+      git fetch origin prod:prod     : créer une nouvelle branche en local provenant de remote 
+      git remote remove origin : remove remote origin from local git 
+      git pull : to update from github to local 
+      git pull prodLocal : to update from github to local 
+      git branch -m admin-newMenuG : rename branch
+      git pull origin doc : 
+      
+      antd layout, navbar
+      
+      ************************************* rsync local to uber-dashboard-prod1 ************************************** 
+      rsync -r  -e "ssh -i nassKeysDO" Documents/uber-dashboard/  --exclude=node_modules --exclude=build --exclude=.expo --exclude=android --exclude=reset-cache --exclude=package-lock.json --exclude=.vscode --exclude=babel.config.js --exclude=positions.js --exclude=data.js root@192.241.139.136:www/uber-dashboard-prod1
+      
+      Emmet : Merge line : Linearise balise tag
+      
+      https://codecanyon.net/content/upload/form?type=mobile : upload
+      
+      Ctrl+W : search nano
+      
+      expo build:android -t app-bundle : build aab expo
+
+
+     expo publish : publier sur expo store
+     
+     https://codecanyon.net/item/beonews-expo-react-native-mobile-app-for-wordpress/20249018 : expo codecanyon
+     
+     aab link android branch -- customer
+     https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40djaga/good-foods-slug0-087956082f2844caa230eea1dc12f5f7-signed.aab
+     
+     aab apk branch -- customer
+     https://expo.dev/artifacts/e99ce1a8-79ad-4e23-823f-841cdebf7691
+     
+     DRIVER EXPO APP
+     https://expo.dev/@djaga/good-foods-driver0
+     
+     CUSTOMER APK
+     https://expo.dev/artifacts/eas/gGxavC4vSftBi2yNAWNk4J.apk
+     https://expo.dev/accounts/djaga/projects/good-food-slug0/builds/7f220943-543c-4fe1-80cb-ad5ab3a9fcd4
+     
+     Restaurant app
+     https://expo.dev/artifacts/eas/oxDuZkWLZ1pjF5pEpJ54bu.apk
+          
+     upload codecanyon
+     https://codecanyon.net/content/upload/form?type=mobile#
+     
+     watch ./pull.sh : execute ./pull.sh every 2 s
+     
+     mosh --no-init root@192.241.139.136   : connection mosh avec scroll down
+     
+     git reflog show : show you the history of HEAD
+     
+     git reset --keep HEAD@{3} : Revenir dans une position head, dans l'historique
+     
+     yarn start --tunnel | tee tee-result.txt  : tee command pour renvoyer la sortie terminale vers fichier
+     
+     tail -f logfile : listen changes in file
+     
+     ssh -o "ServerAliveInterval 60" root@192.241.139.136 : run ssh persistent
+     
+     watch -n 20 touch tesst.js : solution metro tunnel coupe tout le temps 
+     
+     sudo systemctl status mongodb : check if mongodb running
+     
+     mongo : run mongodb
+     
+     use goodFoods  : create database goodFoods
+     
+     git log --grep=<pattern>  : Search in commits, specified pattern (regular expression).
+     
+     git checkout prod1-local-tmp  push-prod1-local.sh  : copy file from another branch
+
+
+    ls /sys/class/net : Emplacement de tous les interfaces
+
+
+   cat /sys/class/net/lo/carrier : check interface running
+
+
+   cat /sys/class/net/lo/operstate : check interface running 
+   
+   yarn remove <package> : retirer une dépendance
+   
+   git log --all -- '/home/nass/Documents/uber-eats-clone/app.json'   :  chercher un fichier dans les branches
+   
+   git log --all -- somefile :  chercher un fichier dans les branches 
+   
+   git grep 'Book type' $(git rev-list --all)  : rechercher un mot dans tous les repository git
+   
+   https://codecanyon.net/item/multi-restaurants-food-delivery-app-admin-panel/39532345
+   
+   ls ~/.local/share/gnome-shell/extensions/ : Lister toutes les extensions gnome
+   
+   gnome-extensions list : liste toutes les extensions gnomes
+   
+   gnome-extensions list --enabled : extension activé
+   
+   ctrl shift alt R : recorder screen
+   
+   gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 120 : augmenter temps screen recorder
+
+
+   Shift+Alt+O : Remove all unused import
+   
+   pm2 status : check server status
+   
+   pm2 start app.js : start server
+   
+   sudo dpkg -i zoom_amd64.deb : install deb file
+   
+   expo login : se connecter 
+   
+   git config --unset credential.helper  : clear cache password
+   
+   git config --global credential.helper store
+   
+   git config --unset --global credential.helper  : clear cache password
+   
+   passphrase : github ssh key
+
+
+   ng serve --host 0.0.0.0      : angular lancez serveur avec ip
+   
+   git remote rm origin : delete origin
+   
+   expo update 45.0.0 : update de 44 vers 45
+   
+   docker exec -it 8edd6a3ac43c /bin/bash :  run existing container
+   
+   docker run -it ubuntu : run new instance of ubuntu
+   
+   docker ps -a : list docker container
+   
+   npm install expo@45.0.0
+   
+   npm install expo@45.0.0 --force : upgrade or install expo 45 from 44
+
+
+  git fetch origin prodLocal:prodLocal
+
+
+******************* mysql  change root password ***********************
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nass';
+**************** mysql **********
+CREATE DATABASE good_food;
+SHOW DATABASES;
+
+
+ExpressVpn
+ENGYBHF3UKDTDKGP3XX5G2M
+
+
+********************************* Android ******************************
+export ANDROID_HOME=$HOME/Android/Sdk 
+export PATH=$PATH:$ANDROID_HOME/tools
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+ 
+ aws amplify 
+ username :nassoT
+ mdp: 12345678
+  
+  
+
+
+   
+   
+   Chauffeurs Iphone
+   Azouz 0650651645
+   *Elboukhte 0782819124
+   *Elias 0676437396
+   *Nekkaa Pz19
+   *Morvant 
+   *Azoulai
+   Khalatyan 0681075263
+   
+   
+   
+   you have to set up Firebase config as mentionned in documentation for start app
+   une fois l'application cliente chargée, vous devez créer un compte, toujours dans l'appli, pour pouvoir 
+   vous connecter .
+   Ensuite vous pouvez ajouter des restaurants , en créant un compte dans l'appli restaurant ! 
+   Si vous voulez voir des produits s'afficher dans l'appli cliente , vous devez d'abord les ajouter dans l'appli 
+   restaurant.
+   contactez nous à l'adresse cabliveer@gmail.com , nous vous assistons pendant tout le processus de l'installationde toutes 
+   les applications gratuitement ! 
+   pour pouvoir vous connecter vous devez
+   Vous devez installer l'api place de google comme mentionné dans la documentation . puisque lorsque l'utilisateur s'inscrit
+   son adresse est géolocalisé, ainsi il peut par la suite voir les resauants les plus proches de lui dans la map 
+   
+   a initialiser certaine valeurs, static values, dummy datas
+   
+   l'autre  demande un peu plus de temps à installer, à bien comprendre la structure du code , il est plus readable aussi.
+   c'est important de nous contacter pendant votre installation . C'est totalement gratuit ! nous vous assistons pendant l'installation de toutes les apps contact: cabliveer@gmail.com
+   
+   Toutes ces applications sont interdépendant . Communiquent de façon synchronisée et instantanée avec le backend Firebase
+   *******
+   
+   Vous devez configurer firebase comme mentionné dans la documentation, pour que les applis se lancent .
+   Une fois l'appli cliente chargée, pour pouvoir créer un compte vous devez avoir configuré l'api places
+   de google , comme expliqué dans la documentation . L'adresse rentrée par l'utilisateur est automatiquement
+   géolocalisée pour récupérer la latituse et la longitude qui seront utilisées par plusieurs composants dans l'application .
+   Assurée vous bien d'avoir activé 2 choses dans firebase , et uniquement ca , puisque après tout se construit tout seul, progressivement 
+   suivant vos actions dans l'appli , sans que vous ne vous souciez de firebase . 2 choses donc, le type d'authentification, en l'occurence 
+   ici l'email et le mot de passe , et activer la base de donnée . Si vous rencontrez un problème contactez nous .
