@@ -97,6 +97,12 @@ eas build --profile development --platform android
 npx expo start --dev-client
 
 
+******************* eas deploy to store ********************
+
+https://docs.expo.dev/build/setup/
+
+eas build --platform android : create aab
+
 
 
 
