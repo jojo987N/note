@@ -73,6 +73,8 @@ sudo apt install php libapache2-mod-php
 *************** Laravel Create Project  *****************************
 php composer.phar create-project laravel/laravel good-food-admin1
 
+*************** Laravel instal vendor ******************************
+php ../composer.phar i
 
 ************** Solve bug create project  **********************************
 php ../composer.phar install --ignore-platform-reqs
@@ -93,7 +95,8 @@ expressvpn connect [Location]
 ********************** expo dev client *******************************************
 npm install -g eas-cli
 npx expo install expo-dev-client
-eas build --profile development --platform android
+eas build --profile development --platform android       :: android development 
+eas build --profile development --platform ios           :: ios development 
 npx expo start --dev-client
 
 
@@ -102,6 +105,9 @@ npx expo start --dev-client
 https://docs.expo.dev/build/setup/
 
 eas build --platform android : create aab
+
+**************** github copy file from another branch ************************
+git checkout apk-sendA assets/images/logo512.png
 
 
 
